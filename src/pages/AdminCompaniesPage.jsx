@@ -394,6 +394,7 @@ const AdminCompaniesPage = () => {
             setEditingCompanyId(null);
             showToast('Customer details updated successfully.');
           }}
+          onRefresh={fetchCompanies}
         />
       )}
 
