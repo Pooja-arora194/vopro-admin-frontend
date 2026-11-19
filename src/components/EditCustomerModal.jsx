@@ -3,7 +3,7 @@ import { X, Save, Loader2, AlertCircle, CheckCircle2, UserCog, Eye, EyeOff } fro
 import api from '../services/api';
 import '../styles/Modals.css';
 
-const EditCustomerModal = ({ companyId, company: initialCompany, onClose, onSuccess }) => {
+const EditCustomerModal = ({ companyId, company: initialCompany, onClose, onSuccess, onRefresh }) => {
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(!initialCompany);
   const [error, setError] = useState(null);
@@ -72,6 +72,8 @@ const EditCustomerModal = ({ companyId, company: initialCompany, onClose, onSucc
       if (res.data.success) {
         setSuccess(true);
         if (onSuccess) onSuccess(res.data.company);
+        // Refresh the company list in the parent if a handler is provided
+        if (onRefresh) onRefresh();
         setTimeout(() => onClose(), 800);
       }
     } catch (err) {
