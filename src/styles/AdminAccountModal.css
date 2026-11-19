@@ -1,0 +1,409 @@
+/* ==========================================================================
+   VoPro Solutions - Admin Account View & Update Modal Styles
+   Canvas White theme with Electric Purple (#6D2CF9) & Vibrant Orange (#FF6633)
+   ========================================================================== */
+
+.admin-account-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 0, 13, 0.78);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+
+.admin-account-modal {
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 0 30px rgba(109, 44, 249, 0.1);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admin-modal-top-bar {
+  padding: 18px 24px 14px;
+  background: #F8F9FD;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-modal-company-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-company-avatar-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(109, 44, 249, 0.15) 0%, rgba(255, 102, 51, 0.15) 100%);
+  border: 1px solid rgba(109, 44, 249, 0.25);
+  color: #6D2CF9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.admin-modal-title-text {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-modal-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Tabs */
+.admin-modal-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px;
+  background: #F8F9FD;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.12);
+  overflow-x: auto;
+}
+
+.admin-modal-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.admin-modal-tab-btn:hover {
+  color: var(--vopro-purple);
+  background: rgba(109, 44, 249, 0.04);
+}
+
+.admin-modal-tab-btn.active {
+  color: var(--vopro-purple);
+  border-bottom-color: var(--vopro-purple);
+  font-weight: 700;
+  background: rgba(109, 44, 249, 0.05);
+}
+
+.admin-tab-count-badge {
+  font-size: 0.6875rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(109, 44, 249, 0.12);
+  color: #6D2CF9;
+  font-weight: 700;
+}
+
+/* Scrollable Body */
+.admin-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Cards & Section Grids */
+.admin-view-grid-2col {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.admin-view-section-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.15);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.admin-view-section-card:hover {
+  border-color: rgba(109, 44, 249, 0.3);
+}
+
+.admin-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.1);
+}
+
+.admin-section-title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-details-dl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 18px;
+}
+
+.admin-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-detail-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.admin-detail-value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-top: 3px;
+  word-break: break-word;
+}
+
+.admin-detail-value-mono {
+  font-family: var(--font-mono);
+  color: #6D2CF9;
+  font-weight: 600;
+}
+
+/* Plan Box */
+.admin-plan-highlight-card {
+  background: linear-gradient(135deg, rgba(109, 44, 249, 0.08) 0%, rgba(255, 102, 51, 0.08) 100%);
+  border: 1px solid rgba(109, 44, 249, 0.25);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.admin-plan-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FF6633;
+  letter-spacing: 0.05em;
+}
+
+.admin-plan-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 4px 0 6px;
+}
+
+.admin-stats-pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.admin-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.15);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.admin-stat-pill strong {
+  color: #6D2CF9;
+}
+
+/* Edit Form Layout */
+.admin-edit-form-section {
+  background: #F8F9FD;
+  border: 1px solid rgba(109, 44, 249, 0.12);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.admin-edit-form-section-title {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--vopro-purple);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 16px;
+}
+
+.form-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 16px;
+}
+
+/* Contacts List in Modal */
+.admin-contact-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.12);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: all 0.15s ease;
+}
+
+.admin-contact-item-card:hover {
+  border-color: rgba(109, 44, 249, 0.3);
+  box-shadow: 0 2px 8px rgba(109, 44, 249, 0.06);
+}
+
+.admin-contact-main-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-contact-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(109, 44, 249, 0.1);
+  color: #6D2CF9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.admin-contact-name-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-contact-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+/* Audit Table Inside Modal */
+.admin-audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.admin-audit-table th {
+  background: #F8F9FD;
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.admin-audit-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.08);
+  color: var(--text-main);
+}
+
+.admin-audit-table tr:hover {
+  background: rgba(109, 44, 249, 0.03);
+}
+
+/* Footer */
+.admin-modal-footer {
+  padding: 14px 24px;
+  background: #F8F9FD;
+  border-top: 1px solid rgba(109, 44, 249, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .admin-view-grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .form-grid-2col, .form-grid-3col, .admin-details-dl {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   Admin Account Modal Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .acc-details-modal { max-width: 100% !important; border-radius: 20px 20px 0 0; }
+  .acc-details-tabs  { overflow-x: auto; }
+  .acc-details-tab-btn { min-width: 70px; font-size: 0.6875rem; padding: 8px 8px; }
+  .form-grid-2col    { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  .acc-details-body  { padding: 12px; }
+  .acc-add-contact-form { padding: 12px; }
+  .acc-contact-row   { flex-direction: column; align-items: flex-start; gap: 6px; }
+}

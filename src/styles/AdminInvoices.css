@@ -1,0 +1,359 @@
+/* ==========================================================================
+   VoPro Solutions - Admin Invoices & Billing Styles
+   Canvas White (#FFFFFF), Purple (#6D2CF9), Green (#10B981), Orange (#FF6633)
+   ========================================================================== */
+
+.admin-invoices-header-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-invoices-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.admin-invoice-stat-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.12);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.admin-invoice-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(109, 44, 249, 0.3);
+  box-shadow: 0 4px 12px rgba(109, 44, 249, 0.08);
+}
+
+.invoice-stat-icon-wrapper {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.invoice-stat-icon-purple {
+  background: rgba(109, 44, 249, 0.12);
+  color: #6D2CF9;
+}
+
+.invoice-stat-icon-mint {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+}
+
+.invoice-stat-icon-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+}
+
+.invoice-stat-icon-red {
+  background: rgba(239, 68, 68, 0.12);
+  color: #EF4444;
+}
+
+.admin-invoices-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-invoices-filters-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.invoice-number-tag {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #6D2CF9;
+  letter-spacing: 0.02em;
+}
+
+.invoice-amount-tag {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #0F071D;
+}
+
+/* Quick Status Selector Dropdown in Table */
+.status-select-inline {
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid rgba(109, 44, 249, 0.2);
+  background: #FFFFFF;
+  color: #0F071D;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.status-select-inline:focus {
+  border-color: #6D2CF9;
+  box-shadow: 0 0 0 2px rgba(109, 44, 249, 0.15);
+}
+
+.status-select-paid {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.status-select-due {
+  background: rgba(245, 158, 11, 0.1);
+  color: #B45309;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.status-select-overdue {
+  background: rgba(239, 68, 68, 0.1);
+  color: #B91C1C;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.status-select-cancelled {
+  background: #F1F5F9;
+  color: #64748B;
+  border-color: #CBD5E1;
+}
+
+/* Line Items Editor in Create/Edit Modals */
+.line-items-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.line-items-table th {
+  background: #F8FAFC;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748B;
+  padding: 8px 10px;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.line-items-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+
+.line-items-summary-card {
+  background: #F8F9FD;
+  border: 1px solid rgba(109, 44, 249, 0.15);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.line-items-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+.line-items-summary-total {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0F071D;
+  border-top: 1px solid rgba(109, 44, 249, 0.15);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+/* Printable Invoice Modal Styles */
+.printable-invoice-container {
+  background: #FFFFFF;
+  color: #0F071D;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 0.6875rem;
+}
+
+.invoice-brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+ 
+  margin-bottom: 20px;
+}
+
+.invoice-preview-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.invoice-preview-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.invoice-preview-items th {
+  background: #F8FAFC;
+  color: #475569;
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.invoice-preview-items td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.invoice-preview-totals {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.invoice-preview-totals-box {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invoice-target,
+  #printable-invoice-target * {
+    visibility: visible;
+  }
+  #printable-invoice-target {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20mm;
+    background: #FFFFFF;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-invoices-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .admin-invoices-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Invoice Modal Responsive
+   ========================================================================== */
+
+@media (max-width: 540px) {
+  .invoice-brand-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .invoice-brand-row > div:last-child {
+    text-align: left;
+  }
+
+  .invoice-preview-parties {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .invoice-preview-parties > div:last-child {
+    text-align: left;
+  }
+
+  .invoice-preview-totals {
+    justify-content: stretch;
+  }
+
+  .invoice-preview-totals-box {
+    width: 100%;
+  }
+
+  .printable-invoice-container {
+    padding: 14px;
+  }
+
+  /* hide unit-price column to save horizontal space */
+  .invoice-preview-items th:nth-child(3),
+  .invoice-preview-items td:nth-child(3) {
+    display: none;
+  }
+
+  .invoice-preview-items th,
+  .invoice-preview-items td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+}
+
+
+
+
+/* ==========================================================================
+   Invoices Page Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .admin-invoices-header-bar  { flex-direction: column; align-items: flex-start; }
+  .admin-invoices-filter-row  { flex-direction: column; align-items: flex-start; }
+  .admin-invoices-filters-left{ flex-wrap: wrap; width: 100%; }
+  .admin-invoices-stat-grid   { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 480px) {
+  .admin-invoices-stat-grid { grid-template-columns: 1fr 1fr; }
+  .invoice-stat-icon-wrapper{ width: 28px; height: 28px; }
+}

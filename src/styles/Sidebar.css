@@ -1,0 +1,205 @@
+/* ==========================================================================
+   VoPro Admin - Sidebar
+   ========================================================================== */
+
+.vopro-sidebar {
+  width: 220px;
+  background: #0C0418;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Brand */
+.sidebar-brand-box {
+  padding: 24px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.15);
+  background: rgba(7, 0, 13, 0.4);
+  flex-shrink: 0;
+}
+
+.sidebar-brand-logo {
+  height: 40px;
+  max-width: 175px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(109, 44, 249, 0.35));
+}
+
+/* Nav container */
+.sidebar-nav-container {
+  padding: 16px 0 16px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Every link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 12px 8px 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease;
+  position: relative;
+  border-radius: 12px 0 0 12px;
+}
+
+.sidebar-link:hover {
+  color: rgba(255,255,255,0.85);
+  background: rgba(109, 44, 249, 0.08);
+}
+
+/* Icon box */
+.sidebar-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(109, 44, 249, 0.12);
+  color: rgba(255,255,255,0.45);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover .sidebar-icon-box {
+  background: rgba(109, 44, 249, 0.2);
+  color: #FFFFFF;
+}
+
+/* ── ACTIVE STATE ── */
+.sidebar-link.active {
+  background: #FFFFFF;
+  color: #0F071D;
+  font-weight: 700;
+  border-radius: 14px 0 0 14px;
+  margin-right: -1px;
+  z-index: 1;
+  isolation: isolate;
+}
+
+.sidebar-link.active .sidebar-icon-box {
+  background: linear-gradient(135deg, #9B51E0 0%, #6D2CF9 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(109, 44, 249, 0.5);
+}
+
+.sidebar-link.active .sidebar-icon-box svg {
+  color: #FFFFFF !important;
+}
+
+/* ── CONCAVE CURVES via ::before / ::after ── */
+.sidebar-link.active::before,
+.sidebar-link.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: #0C0418;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sidebar-link.active::before {
+  top: -16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 4px 4px 0 4px #FFFFFF;
+  clip-path: inset(-8px 0px 0px -8px);
+}
+
+.sidebar-link.active::after {
+  bottom: -16px;
+  border-top-right-radius: 16px;
+  box-shadow: 4px -4px 0 4px #FFFFFF;
+  clip-path: inset(0px 0px -8px -8px);
+}
+
+/* Footer */
+.sidebar-footer {
+  padding: 16px 12px 20px;
+  border-top: 1px solid rgba(109, 44, 249, 0.15);
+  flex-shrink: 0;
+}
+
+.sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(18, 8, 36, 0.75);
+  border: 1px solid rgba(109, 44, 249, 0.28);
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-logout-btn .logout-icon-box {
+  background: rgba(109, 44, 249, 0.15);
+  border: 1px solid rgba(109, 44, 249, 0.3);
+  color: #C4B5FD;
+}
+
+.sidebar-logout-btn .sidebar-logout-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #C4B5FD;
+}
+
+.sidebar-logout-btn:hover {
+  background: rgba(30, 14, 58, 0.95);
+  border-color: #6D2CF9;
+}
+
+.sidebar-logout-btn:hover .logout-icon-box {
+  background: linear-gradient(135deg, #9B51E0 0%, #6D2CF9 100%);
+  color: #FFFFFF;
+}
+
+.sidebar-logout-btn:hover .sidebar-logout-text {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Mobile */
+.sidebar-backdrop { display: none; }
+
+@media (max-width: 900px) {
+  .vopro-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  }
+  .vopro-sidebar.sidebar-open { transform: translateX(0); }
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(7,0,13,0.8);
+    backdrop-filter: blur(4px);
+    z-index: 45;
+  }
+}

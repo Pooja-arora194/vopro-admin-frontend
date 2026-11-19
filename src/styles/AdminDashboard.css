@@ -1,0 +1,501 @@
+/* ==========================================================================
+   VoPro Admin - Modern Dashboard Styles (White Right-Side Theme + VoPro Colors)
+   Canvas White (#FFFFFF), Clean Cards (#FFFFFF), Purple (#6D2CF9), Orange (#FF6633)
+   ========================================================================== */
+
+.dashboard-viewport {
+  padding: 12px 20px 28px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #FFFFFF;
+}
+
+/* Header Greeting Bar */
+.dashboard-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.greeting-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.greeting-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.dashboard-search-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #F8F9FD;
+  border: 1px solid rgba(109, 44, 249, 0.2);
+  border-radius: 9999px;
+  padding: 0 16px 0 38px;
+  height: 38px;
+  width: 240px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.dashboard-search-pill:focus-within {
+  border-color: #6D2CF9;
+  box-shadow: 0 0 0 3px rgba(109, 44, 249, 0.15);
+  width: 280px;
+}
+
+.search-pill-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+}
+
+.dashboard-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  width: 100%;
+}
+
+.dashboard-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Base Card */
+.dash-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(109, 44, 249, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 14px 16px;
+}
+
+.dash-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dash-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Section 1: Over View Container (Top 4 Stat Cards)
+   ========================================================================== */
+
+.overview-card-container {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(109, 44, 249, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 12px 16px;
+}
+
+.overview-title {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.overview-stat-box {
+  background: #F8F9FD;
+  border: 1px solid rgba(109, 44, 249, 0.1);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.overview-stat-box:hover {
+  transform: translateY(-2px);
+  border-color: rgba(109, 44, 249, 0.35);
+  box-shadow: 0 4px 12px rgba(109, 44, 249, 0.08);
+}
+
+.overview-stat-alert {
+  background: #FFF7F2;
+  border-color: rgba(255, 102, 51, 0.3);
+}
+
+.stat-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon-mint {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+}
+
+.stat-icon-cyan {
+  background: rgba(6, 182, 212, 0.15);
+  color: #06B6D4;
+}
+
+.stat-icon-green {
+  background: rgba(109, 44, 249, 0.15);
+  color: #6D2CF9;
+}
+
+.stat-icon-peach {
+  background: rgba(255, 102, 51, 0.15);
+  color: #FF6633;
+}
+
+.overview-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-big-number {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+.stat-sub-label {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.stat-info-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  color: #FF6633;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Section 2: Middle & Bottom Content Grid
+   ========================================================================== */
+
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: 2.1fr 1fr;
+  gap: 14px;
+}
+
+.grid-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.grid-left-top-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 14px;
+}
+
+/* Card: No of Users / Reach */
+.user-reach-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reach-metric-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 6px 0 2px;
+}
+
+.reach-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(109, 44, 249, 0.1);
+  color: #6D2CF9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reach-big-metric {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.reach-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Card: Donut Chart (Inventory Values / Service Distribution) */
+.donut-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.donut-svg-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color-box {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Card: Top 10 Stores / Top Customer Accounts */
+.top-stores-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.store-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 45px;
+  align-items: center;
+  gap: 10px;
+}
+
+.store-name {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.store-bar-track {
+  height: 9px;
+  background: #F1F3F9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.store-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6D2CF9 0%, #FF6633 100%);
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.store-value {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #FF6633;
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   Section 3: Bottom Dual-Line Area Chart (Expense vs Profit / Revenue)
+   ========================================================================== */
+
+.chart-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.chart-subtitle-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.chart-svg-container {
+  width: 100%;
+  position: relative;
+}
+
+/* Floating Callout Badges on Chart */
+.chart-callout-pill {
+  position: absolute;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.callout-expense {
+  background: #FF6633;
+  color: #FFFFFF;
+}
+
+.callout-profit {
+  background: #10B981;
+  color: #FFFFFF;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-left-top-row {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-viewport {
+    padding: 16px;
+  }
+}
+
+/* ==========================================================================
+   Internal Notes Page Styles
+   ========================================================================== */
+
+.note-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.note-card:hover {
+  border-color: rgba(109, 44, 249, 0.3);
+  box-shadow: 0 4px 12px rgba(109, 44, 249, 0.08);
+}
+
+.note-card-pinned {
+  border-color: rgba(255, 102, 51, 0.4);
+  background: #FFFBF9;
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.note-badge-category {
+  font-size: 0.6875rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(109, 44, 249, 0.1);
+  color: #6D2CF9;
+  font-weight: 600;
+}
+
+.private-note-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 102, 51, 0.12);
+  color: #FF6633;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   Dashboard Responsive
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .dashboard-main-grid { grid-template-columns: 1fr; }
+  .grid-left-top-row   { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .dashboard-viewport  { padding: 12px 12px 24px; gap: 12px; }
+  .overview-grid       { grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .grid-left-top-row   { grid-template-columns: 1fr; }
+  .store-row           { grid-template-columns: 100px 1fr 40px; }
+}
+@media (max-width: 480px) {
+  .overview-grid { grid-template-columns: 1fr 1fr; }
+  .store-row     { grid-template-columns: 80px 1fr 36px; }
+  .store-name    { font-size: 0.6875rem; }
+}

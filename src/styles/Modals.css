@@ -1,0 +1,393 @@
+/* ==========================================================================
+   VoPro Solutions - Admin Modals & Dialogs Styles
+   ========================================================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 0, 13, 0.3);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15), 0 0 24px rgba(109, 44, 249, 0.08);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  animation: modalEnter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F8F9FD;
+}
+
+.modal-header h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.modal-close-btn, .btn-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.modal-close-btn:hover, .btn-close:hover {
+  background: rgba(109, 44, 249, 0.1);
+  color: var(--vopro-purple);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(109, 44, 249, 0.12);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #F8F9FD;
+}
+
+.modal-header-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-header-icon-warning {
+  background: rgba(255, 102, 51, 0.15);
+  color: #FF6633;
+  border: 1px solid rgba(255, 102, 51, 0.3);
+}
+
+.scan-progress-banner {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8125rem;
+}
+
+/* ==========================================================================
+   Responsive Grid Utilities (used across modals)
+   ========================================================================== */
+
+.modal-highlight-box {
+  background: #F8F9FD;
+  border: 1px solid rgba(109, 44, 249, 0.12);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.modal-drag-drop-zone {
+  border: 2px dashed rgba(109, 44, 249, 0.3);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  background: #FAFBFF;
+  margin-bottom: 14px;
+}
+
+.modal-drag-drop-zone:hover {
+  border-color: #6D2CF9;
+  background: rgba(109, 44, 249, 0.03);
+}
+
+.drag-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(109, 44, 249, 0.1);
+  color: #6D2CF9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.modal-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.modal-grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 540px) {
+  .modal-grid-2col,
+  .modal-grid-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-body {
+    padding: 14px;
+  }
+
+  .modal-footer {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+  }
+
+  .modal-footer .btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .modal-header {
+    padding: 12px 14px;
+  }
+}
+
+/* form-grid used in AccountDetailsModal / AdminAccountEditModal */
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 540px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Responsive Modal Body - scrollable on mobile
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .modal-body {
+    overflow-y: auto;
+    flex: 1;
+  }
+}
+
+/* ==========================================================================
+   Invoice table responsive
+   ========================================================================== */
+
+.invoice-preview-items,
+.invoice-preview-items thead,
+.invoice-preview-items tbody,
+.invoice-preview-items tr,
+.invoice-preview-items th,
+.invoice-preview-items td {
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 540px) {
+  .invoice-brand-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .invoice-brand-row > div:last-child {
+    text-align: left;
+  }
+
+  .invoice-preview-parties {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .invoice-preview-parties > div:last-child {
+    text-align: left;
+  }
+
+  .invoice-preview-totals-box {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .invoice-preview-items th,
+  .invoice-preview-items td {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+  }
+
+  /* hide unit price column on very small screens */
+  .invoice-preview-items th:nth-child(3),
+  .invoice-preview-items td:nth-child(3) {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   acc-details-modal (AccountDetailsModal / AdminAccountEditModal) responsive
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .acc-details-modal {
+    border-radius: 20px 20px 0 0;
+    max-height: 95vh;
+    max-width: 100%;
+  }
+
+  .acc-details-tabs {
+    gap: 0;
+    padding: 0 4px;
+  }
+
+  .acc-details-tab-btn {
+    padding: 9px 8px;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+
+  .acc-details-body {
+    padding: 14px;
+  }
+}
+
+/* ==========================================================================
+   DeleteConfirmModal - already small, just ensure full-width on mobile
+   ========================================================================== */
+
+@media (max-width: 400px) {
+  .modal-overlay > div[style*="maxWidth: '340px'"],
+  .modal-overlay > div[style*="max-width: 340px"] {
+    max-width: calc(100vw - 24px);
+  }
+}
+
+/* ==========================================================================
+   Additional Modal Responsive Rules
+   ========================================================================== */
+
+/* Large modals (invoice, notes) full-screen on mobile */
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .modal-content {
+    max-width: 100% !important;
+    border-radius: 20px 20px 0 0;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-body {
+    overflow-y: auto;
+    flex: 1;
+    padding: 14px;
+  }
+  .modal-footer {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .modal-footer .btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .modal-header {
+    padding: 12px 14px;
+  }
+}
+
+/* Modal grids responsive */
+@media (max-width: 540px) {
+  .modal-grid-2col,
+  .modal-grid-3col,
+  .form-grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Account details modal tabs */
+@media (max-width: 480px) {
+  .acc-details-modal {
+    max-width: 100% !important;
+    border-radius: 20px 20px 0 0;
+  }
+  .acc-details-tab-btn {
+    padding: 8px 6px;
+    font-size: 0.6875rem;
+    gap: 3px;
+  }
+  .acc-details-body {
+    padding: 12px;
+  }
+}
+
+/* Invoice view modal */
+@media (max-width: 540px) {
+  .printable-invoice-container {
+    padding: 10px;
+    font-size: 0.625rem;
+  }
+  .invoice-preview-parties {
+    grid-template-columns: 1fr !important;
+  }
+  .invoice-preview-totals {
+    justify-content: stretch;
+  }
+  .invoice-preview-totals-box {
+    width: 100%;
+  }
+}

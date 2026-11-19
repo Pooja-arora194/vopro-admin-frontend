@@ -1,0 +1,189 @@
+/* ==========================================================================
+   VoPro Solutions - Top Navbar Styles
+   Left Search Pill + Right Logged-in User Profile Card
+   ========================================================================== */
+
+.vopro-top-header {
+  padding: 18px 28px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #FFFFFF;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid rgba(109, 44, 249, 0.1);
+}
+
+/* Left Section: Mobile toggle + Search Box */
+.header-left-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-search-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #F8F9FD;
+  border: 1px solid rgba(109, 44, 249, 0.2);
+  border-radius: 9999px;
+  padding: 0 16px 0 38px;
+  height: 40px;
+  width: 300px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.navbar-search-pill:focus-within {
+  border-color: #6D2CF9;
+  box-shadow: 0 0 0 3px rgba(109, 44, 249, 0.15);
+  width: 360px;
+}
+
+.search-pill-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+}
+
+.navbar-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  width: 100%;
+}
+
+.navbar-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Right Section: Bell + User Details Card */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-circle-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.2);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+}
+
+.header-circle-icon-btn:hover {
+  color: #6D2CF9;
+  border-color: #6D2CF9;
+  background: rgba(109, 44, 249, 0.08);
+}
+
+/* User Profile Card on Top Right */
+.navbar-user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 44, 249, 0.2);
+  border-radius: 14px;
+  padding: 6px 16px 6px 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.18s ease;
+}
+
+.navbar-user-card:hover {
+  border-color: rgba(109, 44, 249, 0.45);
+}
+
+.user-avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  padding: 2px;
+  background: var(--vopro-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0F071D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.user-card-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.user-card-name {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.user-card-email {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* Mobile Toggle Button */
+.mobile-nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px;
+}
+
+@media (max-width: 900px) {
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  .vopro-top-header {
+    padding: 14px 20px 8px;
+  }
+  .navbar-search-pill {
+    width: 200px;
+  }
+}
+
+/* ==========================================================================
+   Navbar Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .vopro-top-header { padding: 12px 16px; }
+  .header-search-pill { display: none; }
+  .user-profile-card  { padding: 5px 8px; gap: 6px; }
+  .user-name-block    { display: none; }
+}
+@media (max-width: 480px) {
+  .vopro-top-header { padding: 10px 12px; }
+}
